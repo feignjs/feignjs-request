@@ -6,7 +6,6 @@ function createRequestJsOptions(baseUrl, requestOptions, parameters){
 			{ method: Args.STRING | Args.Optional, _default: 'GET' },
 			{ uri: Args.STRING | Args.Required}
 		], [requestOptions]);
-		
 	options.qs = parameters;
 	options.baseUrl = baseUrl;
 	return options;
@@ -24,8 +23,8 @@ function FeignRequestClient(){
 	};
 }
 
-FeignRequestClient.prototype.request =  function(baseUrl, requestOptions, parameters){
-	var options = createRequestJsOptions(baseUrl, requestOptions, parameters);
+FeignRequestClient.prototype.request =  function(request){
+	var options = createRequestJsOptions(request.baseUrl, request.options, request.parameters);
 	var _this = this;
 	var promise = new Promise(function(resolve, reject){
 		_this.requestFn(options, function(error, response, body){
