@@ -1,0 +1,29 @@
+{
+  "name": "feignjs-request",
+  "version": "0.0.1",
+  "description": "feignjs request.js integration",
+  "main": "feign-request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warmuuh/feign-request.git"
+  },
+  "keywords": [
+    "feign",
+    "rest",
+    "request",
+    "client"
+  ],
+  "author": "Peter Mucha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/warmuuh/feign-request/issues"
+  },
+  "homepage": "https://github.com/warmuuh/feign-request#readme",
+  "dependencies": {
+    "args-js": "^0.10.6",
+    "request": "^2.57.0"
+  }
+}
