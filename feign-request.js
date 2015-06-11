@@ -8,18 +8,22 @@ var request = require('request');
 
 function FeignRequestClient(){
   var args  = Args([
-      { request: Args.FUNCTION | Args.Optional, _default: request},
+      { defaults: Args.OBJECT | Args.Optional},
       { debug: Args.BOOL | Args.Optional, _default: false},
       { json:  Args.BOOL | Args.Optional, _default: true}
     ], arguments);
 
-  this.requestFn = args.request;
+  this.requestFn = request;
   this.requestFn.debug = args.debug;
+  if (args.defaults){
+    this.requestFn = this.requestFn.defaults(args.defaults);
+  }
+  
   this.isJson = args.json;
-
   if (args.json){
     this.requestFn = this.requestFn.defaults({json: true});
   }
+  
 }
 
 FeignRequestClient.prototype.request =  function(request){
@@ -29,7 +33,7 @@ FeignRequestClient.prototype.request =  function(request){
     _this.requestFn(options, function(error, response, body){
       if (error)
         return reject(error);
-      return resolve(body);
+      return resolve({raw: response, body: body});
     });
   });
   return promise;
