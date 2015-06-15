@@ -31,8 +31,8 @@ FeignRequestClient.prototype.request =  function(request){
   var _this = this;
   var promise = new Promise(function(resolve, reject){
     _this.requestFn(options, function(error, response, body){
-      if (error)
-        return reject(error);
+      if (error || response.statusCode >= 400)
+        return reject({status: response.statusCode, message: error || body});
       return resolve({raw: response, body: body});
     });
   });
@@ -49,7 +49,8 @@ FeignRequestClient.prototype._createRequestJsOptions = function(baseUrl, request
   if (options.method == 'GET'){
     options.qs = parameters;
   } else if (this.isJson) {
-    options.body = parameters;
+    if (parameters != null)
+      options.body = parameters;
   } else {
     options.form = parameters;
   }
