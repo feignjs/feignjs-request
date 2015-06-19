@@ -2,9 +2,11 @@
   "name": "feignjs-request",
   "version": "0.0.2",
   "description": "feignjs request.js integration",
-  "main": "feign-request.js",
+  "main": "dist/feign-request.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npm run tsc",
+    "tsc": "node_modules/.bin/tsc -d --out dist/feign-request.js --rootDir src --module commonjs"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,10 @@
     "url": "https://github.com/warmuuh/feign-request/issues"
   },
   "homepage": "https://github.com/warmuuh/feign-request#readme",
-  "dependencies": {
+  "devDependencies": {
+    "typescript": "Microsoft/TypeScript",
     "args-js": "^0.10.6",
-    "request": "^2.57.0"
+    "request": "^2.57.0",
+    "feignjs": "0.0.2"
   }
 }
