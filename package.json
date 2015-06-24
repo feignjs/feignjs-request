@@ -1,6 +1,6 @@
 {
   "name": "feignjs-request",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "feignjs request.js integration",
   "main": "feign-request.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warmuuh/feign-request.git"
+    "url": "git+https://github.com/feignjs/feignjs-request.git"
   },
   "keywords": [
     "feign",
@@ -19,9 +19,9 @@
   "author": "Peter Mucha",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/warmuuh/feign-request/issues"
+    "url": "https://github.com/feignjs/feignjs-request/issues"
   },
-  "homepage": "https://github.com/warmuuh/feign-request#readme",
+  "homepage": "https://github.com/feignjs/feignjs-request#readme",
   "dependencies": {
     "args-js": "^0.10.6",
     "request": "^2.57.0"
