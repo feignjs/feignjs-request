@@ -1,6 +1,6 @@
 {
   "name": "feignjs-request",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "feignjs request.js integration",
   "main": "feign-request.js",
   "scripts": {
