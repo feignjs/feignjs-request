@@ -24,6 +24,6 @@ The constructor accepts an options-object:
 |---|---|---|
 | debug | enabled debug logging in request | false |
 | json | configures request to use json | true |
-| request | a custom request-function (e.g.created with request.defaults) | require('request') |
+| defaults | a default-request object (passed to request.defaults) | null |
 
 
